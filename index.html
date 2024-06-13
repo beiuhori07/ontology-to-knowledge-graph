@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Knowledge Graph Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <script src="https://unpkg.com/n3/browser/n3.min.js"></script>
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+
+
+    <div id="fileUpload">
+        <label for="fileInput">Upload a TTL file to visualize the knowledge graph:</label>
+        <input type="file" id="fileInput">
+    </div>
+    <div id="mynetwork"></div>
+    <div id="info">Click on a node or an edge to see its details here.</div>
+    <div id="searchControls">
+        <input type="text" id="searchBoxNode" placeholder="Search node by name...">
+        <button onclick="searchNodes()">Search</button>
+        <input type="text" id="searchBoxEdge" placeholder="Search edge by name...">
+        <button onclick="searchEdges()">Search</button>
+    </div>
+    <div id="searchResults"></div>
+
+</body>
+
+</html>

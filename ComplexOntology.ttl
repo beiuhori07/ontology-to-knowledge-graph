@@ -1,0 +1,40 @@
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ex: <http://example.com/owl/morecomplex/> .
+
+# Classes
+ex:Person a owl:Class .
+ex:Professor a owl:Class ; rdfs:subClassOf ex:Person .
+ex:Student a owl:Class ; rdfs:subClassOf ex:Person .
+ex:Course a owl:Class .
+
+# Individuals
+ex:JohnDoe a ex:Professor ;
+    ex:teaches ex:IntroductionToAI .
+ex:JaneSmith a ex:Student ;
+    ex:attends ex:IntroductionToAI .
+
+ex:MikeBrown a ex:Student ;
+    ex:attends ex:MachineLearning, ex:IntroductionToAI .
+
+ex:IntroductionToAI a ex:Course ;
+    ex:title "Introduction to Artificial Intelligence" .
+
+ex:MachineLearning a ex:Course ;
+    ex:title "Machine Learning Fundamentals" .
+
+# Object Properties
+ex:teaches a owl:ObjectProperty ;
+    rdfs:domain ex:Professor ;
+    rdfs:range ex:Course .
+
+ex:attends a owl:ObjectProperty ;
+    rdfs:domain ex:Student ;
+    rdfs:range ex:Course .
+
+# Data Properties
+ex:title a owl:DatatypeProperty ;
+    rdfs:domain ex:Course ;
+    rdfs:range rdfs:Literal .
