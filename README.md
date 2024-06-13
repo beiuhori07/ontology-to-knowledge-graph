@@ -7,7 +7,7 @@ docker pull beiuhori07/ontology_to_knowledge_graph
 ~~~
 * Deploy it:
 ~~~bash
-docker run -p 3001:3001 --name ontology_to_knowledge_graph beiuhori07/ontology_to_knowledge_graph
+docker run -p 3001:80 --name ontology_to_knowledge_graph beiuhori07/ontology_to_knowledge_graph
 ~~~
 * Now the application is hosted at __localhost:3001__:
   
@@ -30,5 +30,5 @@ docker run -p 3001:3001 --name ontology_to_knowledge_graph beiuhori07/ontology_t
     ~~~
   * Run a new container with the updated image
     ~~~bash
-    docker run -p 3001:3001 --name ontology_to_knowledge_graph beiuhori07/ontology_to_knowledge_graph
+    docker run -p 3001:80 --name ontology_to_knowledge_graph beiuhori07/ontology_to_knowledge_graph
     ~~~
